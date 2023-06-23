@@ -21,96 +21,106 @@ def random_predict(number: int = 1) -> int:
         predict_number = np.random.randint(1, 101)  # предполагаемое число
         if number == predict_number:
             break  # выход из цикла если угадали c первого рандомного числа
+        
         if predict_number < number < 50:#######################################################   М50
 
             if predict_number < number < 26:
-                
+                if number == predict_number:
+                    break  # выход из цикла если угадали
                 if predict_number < number < 13:                           # ММ12
-                    predict_number = np.random.randint(1, 12)
+                    predict_number = np.random.randint(1, 13)
                     if number == predict_number:
                         break  # выход из цикла если угадали
-
+                    if predict_number < number < 7:
+                        predict_number = np.random.randint(1, 7)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали
+                  
+                if predict_number < number > 18:
+                        predict_number = np.random.randint(19, 26)                        
+                        if number == predict_number:
+                            break  # выход из цикла если угадали
+                        
                 elif predict_number < number > 12:                           # МБ12
-                    predict_number = np.random.randint(13, 24)
-                    if number == predict_number:
-                        break  # выход из цикла если угадали
-
-                elif predict_number > number < 12:                           # БМ12
-                    predict_number = np.random.randint(1, 11)
-                    if number == predict_number:
-                        break  # выход из цикла если угадали
-
-                elif predict_number > number > 12:                           # ББ12
-                    predict_number = np.random.randint(13, 24)
+                    predict_number = np.random.randint(13, 26)
                     if number == predict_number:
                         break  # выход из цикла если угадали
 
             if predict_number < number > 25:
-                
+                predict_number = np.random.randint(26, 50)
+                if number == predict_number:
+                    break  # выход из цикла если угадали
+                   
                 if predict_number < number > 37:                           # МБ37
-                    predict_number = np.random.randint(38, 49)
+                    predict_number = np.random.randint(38, 50)
                     if number == predict_number:
                        break  # выход из цикла если угадали
 
-                if predict_number < number < 37:                           # ММ37
-                    predict_number = np.random.randint(26, 36)
+                elif predict_number < number < 37:                           # ММ37
+                    predict_number = np.random.randint(26, 37)
                     if number == predict_number:
                        break  # выход из цикла если угадали
                                      
             if predict_number > number > 25:
-
-                if predict_number < number > 37:
-                    predict_number = np.random.randint(38, 49)
+                    predict_number = np.random.randint(26, 50)
                     if number == predict_number:
                        break  # выход из цикла если угадали
+            
+                    if predict_number > number > 37:
+                       predict_number = np.random.randint(38, 50)
+                       if number == predict_number:
+                           break  # выход из цикла если угадали
+                
+            if predict_number < number < 37:
+                predict_number = np.random.randint(26, 37)
+                if number == predict_number:
+                    break  # выход из цикла если угадали
                    
-                if predict_number > number < 37:
-                    predict_number = np.random.randint(26, 36)
-                    if number == predict_number:
-                       break  # выход из цикла если угадали
-
-        elif predict_number > number < 50:#######################################################   М50
+            if predict_number > number < 37:
+                predict_number = np.random.randint(26, 37)
+                if number == predict_number:
+                    break  # выход из цикла если угадали
+        elif predict_number > number < 51:#######################################################   М50
+            
             if predict_number > number < 25:
-                predict_number = np.random.randint(1, 24)
+                predict_number = np.random.randint(1, 25)
                 if number == predict_number:
                     break  # выход из цикла если угадали
+
             if predict_number > number > 25:
-                predict_number = np.random.randint(26, 49)
+                predict_number = np.random.randint(26, 51)
                 if number == predict_number:
                     break  # выход из цикла если угадали
-
-            if predict_number < number < 25:
-                predict_number = np.random.randint(1, 24)
-                if number == predict_number:
-                    break  # выход из цикла если угадали
-            if predict_number < number > 25:
-                predict_number = np.random.randint(26, 49)
-                if number == predict_number:
-                    break  # выход из цикла если угадали                
-
+                
         elif predict_number > number > 49:########################################################   Б50
+            
             predict_number = np.random.randint(50, 101)
             if number == predict_number:
                 break  # выход из цикла если угадали
+            
             if predict_number > number > 75:
                 predict_number = np.random.randint(76, 101)
                 if number == predict_number:
                     break  # выход из цикла если угадали
+                
             if predict_number > number < 75:
-                predict_number = np.random.randint(51, 74)
+                predict_number = np.random.randint(50, 75)
                 if number == predict_number:
                     break  # выход из цикла если угадали
 
         elif predict_number < number > 49:#########################################################   Б50
+            
             predict_number = np.random.randint(50, 101)
             if number == predict_number:
                 break  # выход из цикла если угадали
+            
             if predict_number > number > 74:
                 predict_number = np.random.randint(75, 101)
                 if number == predict_number:
                     break  # выход из цикла если угадали
+                
             if predict_number < number < 76:
-                predict_number = np.random.randint(50, 75)
+                predict_number = np.random.randint(50, 76)
                 if number == predict_number:
                     break  # выход из цикла если угадали
     return count
