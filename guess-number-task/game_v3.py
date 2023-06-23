@@ -22,7 +22,7 @@ def random_predict(number: int = 1) -> int:
         if number == predict_number:
             break  # выход из цикла если угадали c первого рандомного числа
         
-        if predict_number < number < 50:#######################################################   М50
+        if predict_number < number < 50: #######################################################   М50
 
             if predict_number < number < 26:
                 if number == predict_number:
@@ -108,14 +108,14 @@ def random_predict(number: int = 1) -> int:
                 if number == predict_number:
                     break  # выход из цикла если угадали
 
-        elif predict_number < number > 49:#########################################################   Б50
+        elif predict_number < number > 50:#########################################################   Б50
             
-            predict_number = np.random.randint(50, 101)
+            predict_number = np.random.randint(51, 101)
             if number == predict_number:
                 break  # выход из цикла если угадали
             
-            if predict_number > number > 74:
-                predict_number = np.random.randint(75, 101)
+            if predict_number > number > 50:
+                predict_number = np.random.randint(51, 101)
                 if number == predict_number:
                     break  # выход из цикла если угадали
                 
@@ -136,7 +136,7 @@ def score_game(random_predict) -> int:
         int: среднее количество попыток
     """
     count_ls = []
-    np.random.seed(1)  # фиксируем сид для воспроизводимости
+    np.random.seed(85)  # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000))  # загадали список чисел
 
     for number in random_array:
