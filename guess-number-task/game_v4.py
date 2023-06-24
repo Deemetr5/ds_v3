@@ -88,13 +88,17 @@ def random_predict(number: int = 1) -> int:
                         predict_number = np.random.randint(51, 70)
                         if number == predict_number:
                             break  # выход из цикла если угадали
-                       
+                    
+                    if number < 60:
+                        
+                        predict_number = np.random.randint(51, 61)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали   
                        
         if predict_number > number: # Если рандомное число больше загаданного
             
             if number < 50:
-                
-                
+                                
                 if number > 25:
                     
                     predict_number = np.random.randint(26, 50)

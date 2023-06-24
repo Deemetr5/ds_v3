@@ -22,30 +22,17 @@ def random_predict(number: int = 1) -> int:
         if number == predict_number:
             break  # выход из цикла если угадали
         
-        if number in range(1, 6):
-            predict_number = np.random.randint(1, 6)  # предполагаемое число
-            if number == predict_number:
-                break  # выход из цикла если угадали
-        
-        if number in range(6, 11):
-            predict_number = np.random.randint(6, 11)  # предполагаемое число           
+        if predict_number < number:
+            while predict_number < number:
+                predict_number += 1
             if number == predict_number:
                 break  # выход из цикла если угадали
             
-        if number in range(10, 11):
-            predict_number = np.random.randint(6, 11)  # предполагаемое число           
+        if predict_number > number:
+            while predict_number > number:
+                predict_number -= 1
             if number == predict_number:
                 break  # выход из цикла если угадали
-        
-        if number in range(15, 11):
-            predict_number = np.random.randint(6, 11)  # предполагаемое число           
-            if number == predict_number:
-                break  # выход из цикла если угадали
-        
-        if number in range(15, 11):
-            predict_number = np.random.randint(6, 11)  # предполагаемое число           
-            if number == predict_number:
-                break  # выход из цикла если угадали           
                     
             
     return count
