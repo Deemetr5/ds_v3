@@ -134,16 +134,21 @@ def score_game(random_predict) -> int:
         int: среднее количество попыток
     """
     count_ls = []
-    np.random.seed(1)  # фиксируем сид для воспроизводимости
+    #np.random.seed(1)  # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000))  # загадали список чисел
 
     for number in random_array:
         count_ls.append(random_predict(number))
 
     score = int(np.mean(count_ls))
-    print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
+    #print(f"Ваш алгоритм угадывает число в среднем за:{score} попыток")
     return score
 
+res_list = []
+for i in range(1, 100):
+    score = score_game(random_predict)
+    res_list.append(score)
+print(max(res_list))
 
 if __name__ == "__main__":
     # RUN
