@@ -26,6 +26,7 @@ def random_predict(number: int = 1) -> int:
             
             if number < 50:
                 
+                
                 if number > 25:
                     
                     predict_number = np.random.randint(26, 50)
@@ -70,7 +71,94 @@ def random_predict(number: int = 1) -> int:
                     if number == predict_number:
                         break  # выход из цикла если угадали
 
+
+            if number > 50:
+                
+                
+                if number > 85:
+                    
+                    predict_number = np.random.randint(86, 101)
+                    if number == predict_number:
+                        break  # выход из цикла если угадали                
+                
+                elif number < 85:
+                    
+                    if number < 70:
                         
+                        predict_number = np.random.randint(51, 70)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали
+                       
+                       
+        if predict_number > number: # Если рандомное число больше загаданного
+            
+            if number < 50:
+                
+                
+                if number > 25:
+                    
+                    predict_number = np.random.randint(26, 50)
+                    if number == predict_number:
+                        break  # выход из цикла если угадали                
+                
+                elif number < 26:
+                    
+                    if number < 13:
+                        
+                        predict_number = np.random.randint(1, 13)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали
+                       
+                        if number > 7:
+                        
+                            predict_number = np.random.randint(7, 13)
+                            if number == predict_number:
+                                break  # выход из цикла если угадал
+                                      
+                    if number > 18:    
+                        
+                        predict_number = np.random.randint(19, 26)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали
+                                            
+                    if number > 12:
+                        
+                        predict_number = np.random.randint(13, 26)
+                        if number == predict_number:
+                            break  # выход из цикла если угадал
+                        
+                    if number > 7:
+                        
+                        predict_number = np.random.randint(7, 13)
+                        if number == predict_number:
+                            break  # выход из цикла если угадал
+                    
+                if number > 25:
+                    
+                    predict_number = np.random.randint(26, 50)
+                    if number == predict_number:
+                        break  # выход из цикла если угадали
+
+
+            if number > 50:
+                
+                
+                if number > 85:
+                    
+                    predict_number = np.random.randint(86, 101)
+                    if number == predict_number:
+                        break  # выход из цикла если угадали                
+                
+                elif number < 85:
+                    
+                    if number < 70:
+                        
+                        predict_number = np.random.randint(51, 70)
+                        if number == predict_number:
+                            break  # выход из цикла если угадали    
+            
+            
+            
     return count
 
 
@@ -84,7 +172,7 @@ def score_game(random_predict) -> int:
         int: среднее количество попыток
     """
     count_ls = []
-    #np.random.seed(1)  # фиксируем сид для воспроизводимости
+    np.random.seed(1)  # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000))  # загадали список чисел
 
     for number in random_array:
