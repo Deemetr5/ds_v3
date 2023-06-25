@@ -13,7 +13,7 @@ def random_predict(number: int = 1) -> int:
 
     Returns:
         int: Число попыток
-    """
+    """    
     count = 0
 
     while True:
@@ -26,12 +26,17 @@ def random_predict(number: int = 1) -> int:
             
             if number < 50:
                 
-                
-                if number > 25:
+                if number > 44:
                     
-                    predict_number = np.random.randint(26, 50)
+                    predict_number = np.random.randint(45, 50)
                     if number == predict_number:
-                        break  # выход из цикла если угадали                
+                        break  # выход из цикла если угадали
+                    
+                if number < 44:
+                    
+                    predict_number = np.random.randint(45, 50)
+                    if number == predict_number:
+                        break  # выход из цикла если угадали
                 
                 elif number < 26:
                     
@@ -66,7 +71,7 @@ def random_predict(number: int = 1) -> int:
                             break  # выход из цикла если угадал
                     
                 if number > 25:
-                    
+                   
                     predict_number = np.random.randint(26, 50)
                     if number == predict_number:
                         break  # выход из цикла если угадали
