@@ -24,15 +24,17 @@ def random_predict(number: int = 1) -> int:
         
         if predict_number < number:
 
-            while predict_number < number:
-                predict_number += 1
+            if predict_number < number:
+                diff_betw = number - predict_number
+                predict_number += diff_betw
             if number == predict_number:
                 break  # выход из цикла если угадали
             
         if predict_number > number:
             
-            while predict_number > number:
-                predict_number -= 1
+            if predict_number > number:
+                diff_betw = predict_number - number
+                predict_number -= diff_betw
             if number == predict_number:
                 break  # выход из цикла если угадали
             
